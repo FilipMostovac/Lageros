@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Lageros.Models.Laptop>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Laptopi</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Novi laptop</a>
+</p>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.INV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HDD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WINDOWS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Izdano)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.INV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HDD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WINDOWS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Izdano)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Uredi</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalji</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

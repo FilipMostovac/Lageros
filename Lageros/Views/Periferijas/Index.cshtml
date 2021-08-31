@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Lageros.Models.Periferija>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Periferija</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Nova Periferija</a>
+</p>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Izbor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kolicnina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Izbor.NazivPeriferije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolicnina)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Uredi</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalji</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

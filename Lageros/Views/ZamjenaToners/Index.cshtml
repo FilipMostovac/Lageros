@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Lageros.Models.ZamjenaToner>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Zamjena tonera</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Nova zamjena</a>
+</p>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Printer.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Toner.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumZamjene)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminKorisnik.PrezimeIme)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Printer.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Toner.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatumZamjene)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdminKorisnik.PrezimeIme)
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

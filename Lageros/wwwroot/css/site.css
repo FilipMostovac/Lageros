@@ -1,0 +1,210 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.line-1 {
+    position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-30%);
+}
+
+/* Animation */
+.anim-typewriter {
+    animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 20.8em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: greenyellow;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+.navbar_base > ul {
+    margin-left: 0px;
+}
+
+.custom-toggler.navbar-toggler {
+    background: linear-gradient(to right,#00fe06 0%, #00f17e 100%)
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    background: black;
+}
+
+.dropdown-menu.show {
+    display: none;
+}
+
+.footer {
+    text-align: center;
+}
+
+
+a.navbar-brand {
+    text-align: center;
+    word-break: break-all;
+}
+
+
+.table{
+    color:white;
+}
+table {
+    color:white;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+/* Provide sufficient contrast against white background */
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    background: linear-gradient(to right,#00fe06 0%, #00f17e 100%);
+}
+
+.dropdown-item{
+    color:white;
+}
+
+a {
+    color: white;
+}
+
+.checkbox:checked:before {
+    background-color: green;
+}
+
+.dropdown {
+    margin: 4px;
+}
+
+.nav-link.active {
+    background: linear-gradient(to right,#00fe06 0%, #00f17e 100%);
+    border-color:lawngreen;
+}
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    color: white;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+    border-top: 1px solid #d2ffc2;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.card-content{
+    margin-top:40px;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 40px;
+    background: url('../img/Pozadina2.png');
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.btn{
+    margin-top: 5px;
+}
+
+.btn-outline-success:hover, .btn-outline-success:active, .btn-outline-success:visited {
+     background: linear-gradient(to right,#00fe06 0%, #00f17e 100%);
+     background-color: black;
+     color: black;
+}
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show > .btn-outline-success.dropdown-toggle {
+    color: #fff;
+    background: linear-gradient(to right,#00fe06 0%, #00f17e 100%);
+    border-color: #28a745;
+}
+
+div.login-logout-tab div.card-holder {
+    padding: 0px 0px 12px 0px;
+    background-color: black;
+}
+.card{
+    background-color:black!important;
+}
+
+div.login-logout-tab ul.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+div.login-logout-tab li.nav-item {
+    width: 50%;
+}
+div.login-logout-tab a.nav-link {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+a:hover {
+    color: white!important;
+}

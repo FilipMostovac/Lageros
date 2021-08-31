@@ -1,0 +1,57 @@
+﻿@model Lageros.Models.Laptop
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Uredi</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-success"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="INV" class="control-label"></label>
+                <input asp-for="INV" class="form-control" />
+                <span asp-validation-for="INV" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RAM" class="control-label"></label>
+                <input asp-for="RAM" class="form-control" />
+                <span asp-validation-for="RAM" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPU" class="control-label"></label>
+                <input asp-for="CPU" class="form-control" />
+                <span asp-validation-for="CPU" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HDD" class="control-label"></label>
+                <input asp-for="HDD" class="form-control" />
+                <span asp-validation-for="HDD" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WINDOWS" class="control-label"></label>
+                <input asp-for="WINDOWS" class="form-control" />
+                <span asp-validation-for="WINDOWS" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Izdano" class="control-label"></label>
+                <input asp-for="Izdano" class="form-control" />
+                <span asp-validation-for="Izdano" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SPREMI" class="btn btn-success" /> |
+                <input type="submit" asp-action="Index" value="Nazad na listu laptopa" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+

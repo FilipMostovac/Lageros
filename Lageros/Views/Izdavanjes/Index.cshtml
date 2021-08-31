@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Lageros.Models.Izdavanje>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>IZDAVANJE</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Izdavanje</a>
+</p>
+<table  class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Korisnik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Laptop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monitor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Periferija)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumZamjene)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminKorisnik.PrezimeIme)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Korisnik.ImePrezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Laptop.INV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monitor.INV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Periferija.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumZamjene)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminKorisnik.PrezimeIme)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Uredi</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalji</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

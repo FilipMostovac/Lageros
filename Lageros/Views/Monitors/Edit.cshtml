@@ -1,0 +1,44 @@
+﻿@model Lageros.Models.Monitor
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Uredi</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-success"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="INV" class="control-label"></label>
+                <input asp-for="INV" class="form-control" />
+                <span asp-validation-for="INV" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Velicina" class="control-label"></label>
+                <input asp-for="Velicina" class="form-control" />
+                <span asp-validation-for="Velicina" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Izdano" class="control-label"></label>
+                <input asp-for="Izdano" class="form-control" />
+                <span asp-validation-for="Izdano" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SPREMI" class="btn btn-success" /> |
+                <input type="submit" asp-action="Index" value="Nazad na listu tonera" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

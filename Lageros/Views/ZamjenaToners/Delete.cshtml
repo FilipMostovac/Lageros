@@ -1,0 +1,38 @@
+﻿@model Lageros.Models.ZamjenaToner
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Brisanje</h2>
+
+<h5>Da li ste sigurni da želite obrisati traženu zamjenu tonera?</h5>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Printer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Printer.Naziv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Toner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Toner.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DatumZamjene)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DatumZamjene)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="OBRIŠI" class="btn btn-success" /> |
+        <input type="submit" asp-action="Index" value="Nazad na listu zamjene tonera" class="btn btn-dark" />
+    </form>
+</div>
