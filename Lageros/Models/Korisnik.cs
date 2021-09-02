@@ -6,10 +6,13 @@ namespace Lageros.Models
     {
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Ime je obavezno polje!")]
         public string Ime { get; set; }
 
+        [Required(ErrorMessage = "Prezime je obavezno polje!")]
         public string Prezime { get; set; }
 
+        [Required(ErrorMessage = "Email je obavezan!")]
         public string Email { get; set; }
 
         [Display(Name = "Sektor")]

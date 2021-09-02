@@ -4,14 +4,16 @@ using Lageros.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lageros.Migrations
 {
     [DbContext(typeof(LagerosContext))]
-    partial class LagerosContextModelSnapshot : ModelSnapshot
+    [Migration("20210902184425_DateTimeNullAllow")]
+    partial class DateTimeNullAllow
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

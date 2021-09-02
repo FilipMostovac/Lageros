@@ -7,7 +7,7 @@ namespace Lageros.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Korisnik")]
+        [Display(Name = "Zaposlenik")]
         public int KorisnikId { get; set; }
 
         public Korisnik Korisnik { get; set; }
@@ -29,7 +29,7 @@ namespace Lageros.Models
 
         [Display(Name = "Datum izdavanja")]
         [Required(ErrorMessage = "Datum zamjene je obavezna!")]
-        public DateTime DatumZamjene { get; set; }
+        public DateTime? DatumZamjene { get; set; }
 
         [Display(Name = "Izdao")]
         public int AdminKorisnikId { get; set; }

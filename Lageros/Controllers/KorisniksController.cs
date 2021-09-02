@@ -57,7 +57,7 @@ namespace Lageros.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Ime,Prezime,Email,SektorId")] Korisnik korisnik)
+        public async Task<IActionResult> Create([Bind("Id,Ime,Prezime,Email,SektorId,NazivSektora")] Korisnik korisnik)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Lageros.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SektorId"] = new SelectList(_context.Set<Sektor>(), "Id", "Id", korisnik.SektorId);
+            ViewData["SektorId"] = new SelectList(_context.Set<Sektor>(), "Id", "NazivSektora", korisnik.SektorId);
             return View(korisnik);
         }
 

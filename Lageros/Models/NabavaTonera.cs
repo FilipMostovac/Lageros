@@ -19,6 +19,6 @@ namespace Lageros.Models
         [Required(ErrorMessage = "Datum nabave obavezno je polje!")]
         [Display(Name = "Datum nabave")]
         [DataType(DataType.Date)]
-        public DateTime DatumZamjene { get; set; }
+        public DateTime? DatumZamjene { get; set; }
     }
 }

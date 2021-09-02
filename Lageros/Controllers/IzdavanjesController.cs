@@ -110,10 +110,10 @@ namespace Lageros.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", izdavanje.KorisnikId);
-            ViewData["LaptopId"] = new SelectList(_context.Laptop, "Id", "Id", izdavanje.LaptopId);
-            ViewData["MonitorId"] = new SelectList(_context.Monitor, "Id", "Id", izdavanje.MonitorId);
-            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "Id", izdavanje.PeriferijaId);
+            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "ImePrezime", izdavanje.KorisnikId);
+            ViewData["LaptopId"] = new SelectList(_context.Laptop, "Id", "INV", izdavanje.LaptopId);
+            ViewData["MonitorId"] = new SelectList(_context.Monitor, "Id", "INV", izdavanje.MonitorId);
+            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "Naziv", izdavanje.PeriferijaId);
             ViewData["AdminKorisnikId"] = new SelectList(_context.AdminKorisnik, "Id", "PrezimeIme", izdavanje.AdminKorisnik);
 
             return View(izdavanje);
@@ -132,10 +132,10 @@ namespace Lageros.Controllers
             {
                 return NotFound();
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", izdavanje.KorisnikId);
-            ViewData["LaptopId"] = new SelectList(_context.Laptop, "Id", "Id", izdavanje.LaptopId);
-            ViewData["MonitorId"] = new SelectList(_context.Monitor, "Id", "Id", izdavanje.MonitorId);
-            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "Id", izdavanje.PeriferijaId);
+            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "ImePrezime", izdavanje.KorisnikId);
+            ViewData["LaptopId"] = new SelectList(_context.Laptop, "Id", "INV", izdavanje.LaptopId);
+            ViewData["MonitorId"] = new SelectList(_context.Monitor, "Id", "INV", izdavanje.MonitorId);
+            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "NazivPeriferije", izdavanje.PeriferijaId);
             ViewData["AdminKorisnikId"] = new SelectList(_context.AdminKorisnik, "Id", "PrezimeIme", izdavanje.AdminKorisnik);
             return View(izdavanje);
         }

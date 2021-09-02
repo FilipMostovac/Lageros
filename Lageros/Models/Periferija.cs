@@ -9,6 +9,7 @@ namespace Lageros.Models
         [Display(Name = "Naziv periferije")]
         public int IzborId { get; set; }
 
+
         [Display(Name = "Periferija")]
         public Izbor Izbor { get; set; }
 

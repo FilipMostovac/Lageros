@@ -20,7 +20,7 @@ namespace Lageros.Models
         [Required(ErrorMessage = "Datum zamjene obavezno je polje!")]
         [Display(Name = "Datum zamjene")]
         [DataType(DataType.Date)]
-        public DateTime DatumZamjene { get; set; }
+        public DateTime? DatumZamjene { get; set; }
 
         [Display(Name = "Zamjenio")]
         public int AdminKorisnikId { get; set; }
