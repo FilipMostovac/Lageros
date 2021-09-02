@@ -65,7 +65,7 @@ namespace Lageros.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,KorisnikId,LaptopId,MonitorId,PeriferijaId,DatumZamjene,AdminKorisnikId")] Izdavanje izdavanje)
+        public async Task<IActionResult> Create([Bind("Id,KorisnikId,LaptopId,MonitorId,PeriferijaId,NazivPeriferije,DatumZamjene,AdminKorisnikId")] Izdavanje izdavanje)
         {
             if (ModelState.IsValid)
             {
@@ -93,10 +93,9 @@ namespace Lageros.Controllers
                         izdavanje.Monitor.Izdano = true;
                 }
 
-                _context.Add(izdavanje);
                 _context.Entry(izdavanje)
-                    .Reference(r => r.Periferija)
-                    .Load();
+                .Reference(t => t.Periferija)
+                .Load();
                 if (izdavanje.Periferija != null)
                 {
                     if (izdavanje.Periferija.Kolicnina < 1)
@@ -113,7 +112,7 @@ namespace Lageros.Controllers
             ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "ImePrezime", izdavanje.KorisnikId);
             ViewData["LaptopId"] = new SelectList(_context.Laptop, "Id", "INV", izdavanje.LaptopId);
             ViewData["MonitorId"] = new SelectList(_context.Monitor, "Id", "INV", izdavanje.MonitorId);
-            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "Naziv", izdavanje.PeriferijaId);
+            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "Model", izdavanje.PeriferijaId);
             ViewData["AdminKorisnikId"] = new SelectList(_context.AdminKorisnik, "Id", "PrezimeIme", izdavanje.AdminKorisnik);
 
             return View(izdavanje);
@@ -135,7 +134,7 @@ namespace Lageros.Controllers
             ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "ImePrezime", izdavanje.KorisnikId);
             ViewData["LaptopId"] = new SelectList(_context.Laptop, "Id", "INV", izdavanje.LaptopId);
             ViewData["MonitorId"] = new SelectList(_context.Monitor, "Id", "INV", izdavanje.MonitorId);
-            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "NazivPeriferije", izdavanje.PeriferijaId);
+            ViewData["PeriferijaId"] = new SelectList(_context.Periferija, "Id", "Model", izdavanje.PeriferijaId);
             ViewData["AdminKorisnikId"] = new SelectList(_context.AdminKorisnik, "Id", "PrezimeIme", izdavanje.AdminKorisnik);
             return View(izdavanje);
         }
