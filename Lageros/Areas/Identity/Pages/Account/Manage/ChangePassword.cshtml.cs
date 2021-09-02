@@ -34,20 +34,20 @@ namespace Lageros.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "Trenutna lozinka je obavezna!")]
             [DataType(DataType.Password)]
-            [Display(Name = "Current password")]
+            [Display(Name = "Trenutna lozinka")]
             public string OldPassword { get; set; }
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "Nova lozinka je obavezna!")]
+            [StringLength(100, ErrorMessage = "Lozinka mora sadržavati najmanje {2} a najviše {1} znakova!", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "New password")]
+            [Display(Name = "Nova lozinka")]
             public string NewPassword { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm new password")]
-            [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+            [Display(Name = "Potvrda lozinke")]
+            [Compare("NewPassword", ErrorMessage = "Nova lozinka i potvrda lozinke se ne podudaraju!")]
             public string ConfirmPassword { get; set; }
         }
 

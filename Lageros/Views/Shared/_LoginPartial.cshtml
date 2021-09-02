@@ -10,34 +10,36 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown active">
                 <a class="btn btn-outline-success dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Printeri
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item class=" green"" asp-area="" asp-controller="Printers" asp-action="">Printeri</a>
-                    <a class="dropdown-item" asp-area="" asp-controller="Toners" asp-action="">Toneri</a>
-                    <a class="dropdown-item" asp-area="" asp-controller="ZamjenaToners" asp-action="">Zamjena Tonera</a>
-                    <a class="dropdown-item" asp-area="" asp-controller="NabavaToneras" asp-action="">Nabava Tonera</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown active">
-                <a class="btn btn-outline-success font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Lager
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" asp-area="" asp-controller="Laptops" asp-action="">Laptopi</a>
                     <a class="dropdown-item" asp-area="" asp-controller="Monitors" asp-action="">Monitori</a>
                     <a class="dropdown-item" asp-area="" asp-controller="Periferijas" asp-action="">Periferija</a>
-                    <a class="dropdown-item" asp-area="" asp-controller="Izdavanjes" asp-action="">Izdavanje</a>
+                    <a class="dropdown-item class=" green"" asp-area="" asp-controller="Printers" asp-action="">Printeri</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Toners" asp-action="">Toneri</a>
+
                 </div>
             </li>
             <li class="nav-item dropdown active">
                 <a class="btn btn-outline-success font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ADMIN
+                    Izdavanje/Nabava
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" asp-area="" asp-controller="AdminKorisniks" asp-action="">Admin Korisnici</a>
-                    <a class="dropdown-item" asp-area="" asp-controller="Korisniks" asp-action="">Korisnik</a>
-                    <a class="dropdown-item" asp-area="" asp-controller="Sektors" asp-action="">Sektor</a>
+                    
+                    <a class="dropdown-item" asp-area="" asp-controller="Izdavanjes" asp-action="">Izdavanje opreme</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="ZamjenaToners" asp-action="">Zamjena tonera</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="NabavaToneras" asp-action="">Nabava tonera</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="btn btn-outline-success font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" asp-area="" asp-controller="AdminKorisniks" asp-action="">Administratori</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Korisniks" asp-action="">Zaposlenici</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Sektors" asp-action="">Sektori</a>
                 </div>
             </li>
         </ul>
@@ -49,7 +51,7 @@
                 </li>
                 <li class="nav-item">
                     <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                        <button id="logout" type="submit" class="btn btn-outline-success">Logout</button>
+                        <button id="logout" type="submit" class="btn btn-outline-success">Odjava</button>
                     </form>
                 </li>
             }

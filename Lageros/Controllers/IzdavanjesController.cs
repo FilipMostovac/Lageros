@@ -209,19 +209,27 @@ namespace Lageros.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var izdavanje = await _context.Izdavanje.FindAsync(id);
-            _context.Entry(izdavanje)
-            .Reference(t => t.Periferija)
-            .Load();
-             izdavanje.Periferija.Kolicnina++;
-            _context.Entry(izdavanje)
-            .Reference(t => t.Laptop)
-            .Load();
-            izdavanje.Laptop.Izdano = false;
-            _context.Entry(izdavanje)
-            .Reference(t => t.Monitor)
-            .Load();
-            izdavanje.Monitor.Izdano = false;
-
+            if (izdavanje.PeriferijaId != null)
+            {
+                _context.Entry(izdavanje)
+                .Reference(t => t.Periferija)
+                .Load();
+                izdavanje.Periferija.Kolicnina++;
+            }
+            if (izdavanje.LaptopId != null)
+            {
+                _context.Entry(izdavanje)
+                .Reference(t => t.Laptop)
+                .Load();
+                izdavanje.Laptop.Izdano = false;
+            }
+            if (izdavanje.MonitorId != null)
+            {
+                _context.Entry(izdavanje)
+                .Reference(t => t.Monitor)
+                .Load();
+                izdavanje.Monitor.Izdano = false;
+            }
             _context.Izdavanje.Remove(izdavanje);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

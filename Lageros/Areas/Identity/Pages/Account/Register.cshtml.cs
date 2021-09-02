@@ -64,11 +64,11 @@ namespace Lageros.Areas.Identity.Pages.Account
             [Required(ErrorMessage = "Lozinka je obavezna!")]
             [StringLength(100, ErrorMessage = "Lozinka {0} mora sadržavati najmanje {2} a najviše {1} simbola!", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Lozinka")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Potvrda lozinke")]
             [Compare("Password", ErrorMessage = "Lozinka i potvrda lozinke se ne podudaraju!")]
             public string ConfirmPassword { get; set; }
         }
