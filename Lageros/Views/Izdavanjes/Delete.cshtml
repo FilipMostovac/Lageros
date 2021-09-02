@@ -14,25 +14,25 @@
             @Html.DisplayNameFor(model => model.Korisnik)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Korisnik.Id)
+            @Html.DisplayFor(model => model.Korisnik.ImePrezime)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Laptop)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Laptop.Id)
+            @Html.DisplayFor(model => model.Laptop.INV)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Monitor)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Monitor.Id)
+            @Html.DisplayFor(model => model.Monitor.INV)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Periferija)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Periferija.Id)
+            @Html.DisplayFor(model => model.Periferija.Model)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DatumZamjene)
@@ -40,11 +40,17 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DatumZamjene)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminKorisnik)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AdminKorisnik.PrezimeIme)
+        </dd>
     </dl>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="DELETE" class="btn btn-danger" /> |
+        <input type="submit" value="DELETE" class="btn btn-success" /> |
         <input type="submit" asp-action="Index" value="Nazad na listu izdavanja" class="btn btn-dark" />
     </form>
 </div>

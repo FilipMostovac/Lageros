@@ -5,43 +5,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Korisnik</h4>
+<h1>Uredi</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-success"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Ime" class="control-label"></label>
                 <input asp-for="Ime" class="form-control" />
-                <span asp-validation-for="Ime" class="text-danger"></span>
+                <span asp-validation-for="Ime" class="text-success"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Prezime" class="control-label"></label>
                 <input asp-for="Prezime" class="form-control" />
-                <span asp-validation-for="Prezime" class="text-danger"></span>
+                <span asp-validation-for="Prezime" class="text-success"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <span asp-validation-for="Email" class="text-success"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SektorId" class="control-label"></label>
                 <select asp-for="SektorId" class="form-control" asp-items="ViewBag.SektorId"></select>
-                <span asp-validation-for="SektorId" class="text-danger"></span>
+                <span asp-validation-for="SektorId" class="text-success"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="SPREMI" class="btn btn-success" /> |
+                <input type="submit" asp-action="Index" value="Nazad na listu printera" class="btn btn-dark" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

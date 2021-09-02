@@ -6,6 +6,7 @@ namespace Lageros.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Naziv periferije")]
         public int IzborId { get; set; }
 
         [Display(Name = "Periferija")]
@@ -13,6 +14,8 @@ namespace Lageros.Models
 
         public string Model { get; set; }
 
+        [Required(ErrorMessage = "Količina periferije je obavezna!")]
+        [Display(Name = "Količina")]
         public int Kolicnina { get; set; }
 
     }

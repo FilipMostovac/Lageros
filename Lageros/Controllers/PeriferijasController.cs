@@ -57,7 +57,7 @@ namespace Lageros.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IzborId,Model,Kolicnina")] Periferija periferija)
+        public async Task<IActionResult> Create([Bind("Id,IzborId,NazivPeriferije,Model,Kolicnina")] Periferija periferija)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace Lageros.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IzborId,Model,Kolicnina")] Periferija periferija)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Kolicnina")] Periferija periferija)
         {
             if (id != periferija.Id)
             {
@@ -131,7 +131,6 @@ namespace Lageros.Controllers
             }
 
             var periferija = await _context.Periferija
-                .Include(p => p.Izbor)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (periferija == null)
             {

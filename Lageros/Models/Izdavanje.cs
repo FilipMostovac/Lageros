@@ -27,8 +27,8 @@ namespace Lageros.Models
 
         public Periferija Periferija { get; set; }
 
-        [Display(Name = "Datum zamjene")]
-        [DataType(DataType.Date)]
+        [Display(Name = "Datum izdavanja")]
+        [Required(ErrorMessage = "Datum zamjene je obavezna!")]
         public DateTime DatumZamjene { get; set; }
 
         [Display(Name = "Izdao")]

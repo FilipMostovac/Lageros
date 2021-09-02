@@ -193,7 +193,7 @@ namespace Lageros.Controllers
                 .Include(i => i.Laptop)
                 .Include(i => i.Monitor)
                 .Include(i => i.Periferija)
-                .Include(i => i.AdminKorisnikId)
+                .Include(i => i.AdminKorisnik)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (izdavanje == null)
             {
@@ -209,6 +209,19 @@ namespace Lageros.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var izdavanje = await _context.Izdavanje.FindAsync(id);
+            _context.Entry(izdavanje)
+            .Reference(t => t.Periferija)
+            .Load();
+             izdavanje.Periferija.Kolicnina++;
+            _context.Entry(izdavanje)
+            .Reference(t => t.Laptop)
+            .Load();
+            izdavanje.Laptop.Izdano = false;
+            _context.Entry(izdavanje)
+            .Reference(t => t.Monitor)
+            .Load();
+            izdavanje.Monitor.Izdano = false;
+
             _context.Izdavanje.Remove(izdavanje);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

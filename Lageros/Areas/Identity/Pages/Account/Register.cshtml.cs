@@ -116,10 +116,10 @@ namespace Lageros.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
+
+                    ModelState.AddModelError("", "Lozinka mora sadržavati najmanje jedan znak koji nije alfanumerički.");
+                    ModelState.AddModelError("", "Lozinka mora sadržavati najmanje jednu znamenku ('0'-'9').");
+                    ModelState.AddModelError("", "Lozinka mora sadržavati barem jedno veliko slovo ('A'-'Z').");
             }
 
             // If we got this far, something failed, redisplay form
