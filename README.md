@@ -21,9 +21,9 @@ UPUTE SA SLIKAMA: https://docs.google.com/document/d/1RleDA6U1u---_dwIAmjKDO7pm2
 
 7.	Tools -> NuGet Package Manager -> Package Manager Console
  
-    Otvara se terminal na dnu ekrana u koji moramo upisati dve naredbe:
-    •	Update-Database -Context LagerosContext
-    •	Update-Database -Context AuthDbContext
+    Otvara se terminal na dnu ekrana u koji moramo upisati dvije naredbe:
+    Update-Database -Context LagerosContext
+    Update-Database -Context AuthDbContext
  
 8.	Otvorite SQL Server Management Studio -> Spojite se na server koji je zadani
  
@@ -36,7 +36,7 @@ UPUTE SA SLIKAMA: https://docs.google.com/document/d/1RleDA6U1u---_dwIAmjKDO7pm2
  
 12.	Otovrimo VisualStudio i pokrećemo aplikaciju na Gumb IIS Express
  
-13.	Prilikom prvog pokretanje potrebno je isntalirat SSL certifikat -> Yes
+13.	Prilikom prvog pokretanje potrebno je instalirati SSL certifikat -> Yes
 14.	Kako bi aplikacija uredno radila potrebno je:
 
     a) Unesite novi sektor u aplikaciju
