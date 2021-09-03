@@ -1,6 +1,9 @@
 # Lageros
 
 ##
+
+UPUTE SA SLIKAMA: https://docs.google.com/document/d/1RleDA6U1u---_dwIAmjKDO7pm2gm7nlV/edit?usp=sharing&ouid=106441156201221806964&rtpof=true&sd=true
+
 1.	Potrebno je instalirati VisualStudio Community 2019 (Ako ga nemate instaliranog)
     https://visualstudio.microsoft.com/downloads/
 2.	Prilikom instalacije potrebno je instalirati ASP.NET and web development paket
