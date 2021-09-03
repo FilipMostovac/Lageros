@@ -22,8 +22,8 @@ UPUTE SA SLIKAMA: https://docs.google.com/document/d/1RleDA6U1u---_dwIAmjKDO7pm2
 7.	Tools -> NuGet Package Manager -> Package Manager Console
  
     Otvara se terminal na dnu ekrana u koji moramo upisati dvije naredbe:
-    Update-Database -Context LagerosContext
-    Update-Database -Context AuthDbContext
+    1. Update-Database -Context LagerosContext
+    2. Update-Database -Context AuthDbContext
  
 8.	Otvorite SQL Server Management Studio -> Spojite se na server koji je zadani
  
